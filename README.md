@@ -149,7 +149,21 @@ Substitua `postgres-db`, `myuser` e `mydatabase` pelos valores que você definiu
 ## Execute Instruções SQL:
  - Dentro do contêiner PostgreSQL, você pode executar instruções SQL diretamente. Por exemplo, para criar uma tabela:
 
-CREATE TABLE users (
-  id SERIAL PRIMARY KEY,
-  username VARCHAR(50) NOT NULL
-);
+`CREATE TABLE users (`
+  `id SERIAL PRIMARY KEY,`
+  `username VARCHAR(50) NOT NULL`
+`);`
+
+Para inserir dados na tabela:
+`INSERT INTO users (username) VALUES ('john_doe');`
+Lembre-se de substituir esses exemplos por instruções SQL relevantes ao seu caso.
+
+## Saia do Contêiner PostgreSQL:
+- Quando terminar de executar instruções SQL, saia do contêiner PostgreSQL:
+`\q`
+
+## Para o Ambiente Docker:
+- Quando você terminar de usar o ambiente, pare os contêineres com o seguinte comando:
+`docker-compose down`
+
+Este é um guia básico para iniciar e interagir com um ambiente Docker composto por um aplicativo Node.js e um banco de dados PostgreSQL. Lembre-se de personalizar o `docker-compose.yml` conforme necessário para atender às suas necessidades específicas.
