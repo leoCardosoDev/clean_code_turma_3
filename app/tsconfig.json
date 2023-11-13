@@ -9,7 +9,7 @@
   },
   "include": [
       "./src"
-  ],
+, "examples/initial/circle.test.ts", "examples/initial/circle.ts"  ],
   "exclude": [
       "./node_modules"
   ]
