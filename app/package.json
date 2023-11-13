@@ -1,0 +1,16 @@
+{
+  "scripts": {
+    "tsc:init": "tsc --init",
+    "build": "tsc",
+    "test": "tsc && jest dist/"
+  },
+  "dependencies": {
+    "typescript": "^5.2.2"
+  },
+  "devDependencies": {
+    "@types/jest": "^29.5.8",
+    "install": "^0.13.0",
+    "jest": "^29.7.0",
+    "npm": "^10.2.3"
+  }
+}
