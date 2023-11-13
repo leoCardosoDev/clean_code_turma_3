@@ -117,3 +117,39 @@ npm run test
 \```
 
 Se os testes tiverem sido executados com sucesso está tudo pronto!
+
+# Explicação dos Principais Elementos
+
+## `node-app`:
+- **image:** `node:16`: Utiliza a imagem oficial do Node.js 16.
+- **container_name:** Define o nome do contêiner.
+- **working_dir:** Define o diretório de trabalho dentro do contêiner.
+- **volumes:** Mapeia o diretório local `./app` para o diretório `/app` no contêiner.
+- **command:** Executa os comandos `npm install` e `npm start`.
+- **depends_on:** Especifica que este serviço depende do serviço `postgres`.
+
+## `postgres`:
+- **image:** `postgres:latest`: Utiliza a imagem oficial mais recente do PostgreSQL.
+- **container_name:** Define o nome do contêiner.
+- **environment:** Configura as variáveis de ambiente para o PostgreSQL (nome do banco de dados, usuário, senha).
+- **volumes:** Mapeia o diretório local `./db_data` para o diretório `/var/lib/postgresql/data` no contêiner.
+
+## Networks:
+- **app-network:** Define uma rede chamada `app-network` que ambos os serviços se conectarão.
+
+## Passo a Passo para Acessar o Banco de Dados e Executar Instruções SQL
+`docker-compose up -d`
+
+## Acesse o Contêiner do PostgreSQL:
+- Você pode acessar o contêiner do PostgreSQL usando o seguinte comando:
+`docker exec -it postgres-db psql -U myuser mydatabase`
+
+Substitua `postgres-db`, `myuser` e `mydatabase` pelos valores que você definiu no arquivo `docker-compose.yml`.
+
+## Execute Instruções SQL:
+ - Dentro do contêiner PostgreSQL, você pode executar instruções SQL diretamente. Por exemplo, para criar uma tabela:
+
+CREATE TABLE users (
+  id SERIAL PRIMARY KEY,
+  username VARCHAR(50) NOT NULL
+);
