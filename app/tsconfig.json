@@ -1,16 +1,14 @@
+// tsconfig.json
 {
   "compilerOptions": {
-  "incremental": true,
-  "target": "es6",
-  "module": "commonjs",
-  "outDir": "./dist",
-  "strict": true, // depende do seu nível de conhecimento em TypeScript, recomendo começar com false
-  "esModuleInterop": true
+    "target": "esnext",
+    "module": "commonjs",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "outDir": "./dist"
   },
-  "include": [
-      "./src"
-, "examples/initial/circle.test.ts", "examples/initial/circle.ts"  ],
-  "exclude": [
-      "./node_modules"
-  ]
+  "include": ["./app/**/*.ts", "./test/**/*.ts"],
+  "exclude": ["node_modules", "dist"]
 }
