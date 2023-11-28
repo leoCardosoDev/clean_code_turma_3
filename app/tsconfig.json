@@ -1,14 +1,17 @@
 // tsconfig.json
 {
   "compilerOptions": {
-    "target": "esnext",
+    "target": "es6",
     "module": "commonjs",
+    "incremental": true,
     "strict": true,
     "esModuleInterop": true,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
     "outDir": "./dist"
   },
-  "include": ["./app/**/*.ts", "./test/**/*.ts"],
-  "exclude": ["node_modules", "dist", "examples"]
+  "include": [
+    "src",
+    "test"
+  ]
 }
