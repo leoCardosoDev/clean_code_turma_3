@@ -1,10 +1,10 @@
-import Cpf from '../src/cpf'
+import Cpf from "../src/cpf"
 
-test('Deve validar um CPF', () => {
-  const cpf = new Cpf('847.903.332-05')
+test("Deve validar um CPF", () => {
+  const cpf = new Cpf("847.903.332-05")
   expect(cpf).toBeDefined()
 })
 
-test('Não deve validar um CPF', () => {
-  expect(() => new Cpf('111.111.111-11')).toThrow(new Error('Invalid cpf'))
-}) 
+test("Não deve validar um CPF", () => {
+  expect(() => new Cpf("111.111.111-11")).toThrow(new Error("Invalid cpf"))
+})
