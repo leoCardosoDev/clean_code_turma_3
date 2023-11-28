@@ -1,3 +1,4 @@
+import Coupon from '../src/coupon'
 import Item from '../src/item'
 import Order from "../src/order"
 
@@ -17,4 +18,14 @@ test("Deve criar um pedido com 3 itens", () => {
   order.addItem(new Item(3, "Instrumentos Musicais", "Guitarra", 30), 3)
   const total = order.getTotal()
   expect(total).toBe(6090)
+})
+
+test("Deve criar um pedido com 3 itens com cupom de desconto", () => {
+  const order = new Order("847.903.332-05")
+  order.addItem(new Item(1, "Instrumentos Musicais", "Guitarra", 1000), 1)
+  order.addItem(new Item(2, "Instrumentos Musicais", "Amplificador", 5000), 1)
+  order.addItem(new Item(3, "Instrumentos Musicais", "Guitarra", 30), 3)
+  order.addCoupon(new Coupon("VALE20", 20))
+  const total = order.getTotal()
+  expect(total).toBe(4872)
 })
