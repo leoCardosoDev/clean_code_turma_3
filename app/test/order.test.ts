@@ -37,5 +37,5 @@ test("Deve criar um pedido com 3 itens com cupom de desconto expirado", () => {
   order.addItem(new Item(3, "Instrumentos Musicais", "Guitarra", 30), 3)
   order.addCoupon(new Coupon("VALE20", 20, new Date('2021-03-01')))
   const total = order.getTotal()
-  expect(total).toBe(4872)
+  expect(total).toBe(6090)
 })
