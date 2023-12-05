@@ -1,0 +1,8 @@
+{
+  "type": "module",
+  "extensions": ["ts", "tsx", "js", "jsx"],
+  "testEnvironment": "node",
+  "transform": {
+    "^.+\\.tsx?$": "ts-jest"
+  }
+}
