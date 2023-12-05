@@ -1,3 +1,5 @@
+import DatabaseConnectionAdapter from '../src/database_connection_adapter'
+import ItemRepositoryDatabase from '../src/item_repository_database'
 import ItemRepositoryMemory from '../src/item_repository_memory'
 import OrderRepositoryMermory from '../src/order_repository_memory'
 import PlaceOrder from '../src/place_order'
@@ -20,7 +22,7 @@ test('Deve fazer um pedido', async () => {
       }, 
     ]
   }
-  const placeOrder = new PlaceOrder(new ItemRepositoryMemory(), new OrderRepositoryMermory())
+  const placeOrder = new PlaceOrder(new ItemRepositoryDatabase(new DatabaseConnectionAdapter()), new OrderRepositoryMermory())
   const output = await placeOrder.execute(input)
   expect(output.total).toBe(6090)
 })
