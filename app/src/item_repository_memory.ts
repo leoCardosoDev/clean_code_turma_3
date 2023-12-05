@@ -10,7 +10,7 @@ export default class ItemRepositoryMemory implements ItemRepository {
       new Item(3, "Instrumentos Musicais", "Cabo", 30)
     ]
   }
-  findById(idItem: number): Item {
+  async findById(idItem: number): Promise<Item> {
     const item = this.items.find(item => item.idItem === idItem)
     if (!item) throw new Error('Item not found')
     return item
