@@ -18,8 +18,9 @@ test('Deve fazer um pedido', async () => {
         idItem: 3,
         quantity: 3
       }, 
-    ])
+    ], new Date('2021-03-01'))
   const placeOrder = new PlaceOrder(new ItemRepositoryDatabase(new DatabaseConnectionAdapter()), new OrderRepositoryMermory())
   const output = await placeOrder.execute(input)
   expect(output.total).toBe(6090)
+  expect(output.code).toBe('202100000001')
 })
