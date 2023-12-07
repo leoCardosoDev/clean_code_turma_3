@@ -1,5 +1,5 @@
-import Order from './order'
-import OrderRepository from './order_repository'
+import Order from '../../../domain/entity/order'
+import OrderRepository from '../../../domain/repository/order_repository'
 
 export default class OrderRepositoryMermory implements OrderRepository {
   orders: Order[]

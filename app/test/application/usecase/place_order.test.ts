@@ -1,7 +1,7 @@
-import DatabaseConnectionAdapter from '../src/database_connection_adapter'
-import ItemRepositoryDatabase from '../src/item_repository_database'
-import OrderRepositoryMermory from '../src/order_repository_memory'
-import PlaceOrder from '../src/place_order'
+import PlaceOrder from '../../../src/application/usecase/place_order'
+import DatabaseConnectionAdapter from '../../../src/infra/database/database_connection_adapter'
+import ItemRepositoryDatabase from '../../../src/infra/repository/database/item_repository_database'
+import OrderRepositoryMermory from '../../../src/infra/repository/memory/order_repository_memory'
 
 test('Deve fazer um pedido', async () => {
   const input = {

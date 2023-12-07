@@ -1,6 +1,6 @@
-import DatabaseConnection from './database_connection'
-import Item from './item'
-import ItemRepository from './item_repository'
+import DatabaseConnection from '../../database/database_connection'
+import Item from '../../../domain/entity/item'
+import ItemRepository from '../../../domain/repository/item_repository'
 
 export default class ItemRepositoryDatabase implements ItemRepository {
 

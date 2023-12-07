@@ -1,6 +1,6 @@
-import Coupon from '../src/coupon'
-import Item from '../src/item'
-import Order from "../src/order"
+import Coupon from '../../../src/domain/entity/coupon'
+import Item from '../../../src/domain/entity/item'
+import Order from "../../../src/domain/entity/order"
 
 test("Não deve criar um pedido com CPF inválido", () => {
   expect(() => new Order("111.111.111-11")).toThrow(new Error("Invalid cpf"))

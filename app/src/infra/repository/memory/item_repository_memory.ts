@@ -1,5 +1,5 @@
-import Item from './item'
-import ItemRepository from './item_repository'
+import Item from '../../../domain/entity/item'
+import ItemRepository from '../../../domain/repository/item_repository'
 
 export default class ItemRepositoryMemory implements ItemRepository {
   items: Item[]

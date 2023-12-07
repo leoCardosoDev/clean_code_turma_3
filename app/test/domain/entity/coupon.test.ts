@@ -1,4 +1,4 @@
-import Coupon from '../src/coupon'
+import Coupon from '../../../src/domain/entity/coupon'
 
 describe('Teste do coupon', () => {
   it('Deve criar um cupom de desconto válido', () => {
