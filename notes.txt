@@ -1,0 +1,2 @@
+sudo chown leoca:leoca
+na pasta de banco de dados
