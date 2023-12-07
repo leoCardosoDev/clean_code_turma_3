@@ -48,3 +48,12 @@ test("Deve criar um pedido com 3 itens", () => {
   const freight = order.getFreight()
   expect(freight).toBe(260)
 })
+
+test("Deve criar um pedido com o código gerado", () => {
+  const order = new Order("847.903.332-05", new Date('2021-03-01'))
+  order.addItem(new Item(1, "Instrumentos Musicais", "Guitarra", 1000, 100, 30, 10, 3), 1)
+  order.addItem(new Item(2, "Instrumentos Musicais", "Amplificador", 5000, 100, 50, 50, 20), 1)
+  order.addItem(new Item(3, "Instrumentos Musicais", "Cabo", 30, 10, 10, 10, 0.9), 3)
+  const code = order.code
+  expect(code.value).toBe('202100000001')
+})
