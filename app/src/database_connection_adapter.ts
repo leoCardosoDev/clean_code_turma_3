@@ -9,4 +9,7 @@ export default class DatabaseConnectionAdapter implements DatabaseConnection {
   query(statement: string, params: any) {
     return this.pgp.query(statement, params)
   }
+  async close() {
+    await this.pgp.$pool.end()
+  }
 }
