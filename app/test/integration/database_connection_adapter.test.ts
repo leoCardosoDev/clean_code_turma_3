@@ -1,4 +1,4 @@
-import DatabaseConnectionAdapter from '../../../src/infra/database/database_connection_adapter'
+import DatabaseConnectionAdapter from '../../src/infra/database/database_connection_adapter'
 
 describe('Database Connection Adapter', () => {
   let databaseConnection: DatabaseConnectionAdapter
