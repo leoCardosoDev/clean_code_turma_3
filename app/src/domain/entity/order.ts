@@ -28,6 +28,22 @@ export default class Order {
     this.coupon = coupon
   }
 
+  getCpf() {
+    return this.cpf.value
+  }
+
+  getCode() {
+    return this.code.value
+  }
+
+  getCoupon() {
+    return this.coupon?.code
+  }
+
+  getOrderItems() {
+    return this.orderItems
+  }
+
   getTotal() {
     let total = 0
     for (const orderItem of this.orderItems) {
